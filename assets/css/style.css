@@ -1,0 +1,42 @@
+section:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -56px; 
+  height: 56px; 
+  visibility: hidden; 
+}
+
+.jumbotron h1 {
+    margin-top:30px;
+}
+.jumbotron {
+  padding:150px 0;
+  margin:0;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-size:20px;
+  padding:0px 15px;
+}
+
+#customers .col-md-4 img, #restaurants .col-md-4 img {
+  width:40%;
+}
+#customers .col-md-6 img  {
+  width:40%;
+}
+#customers .col-md-4 p {
+  font-size:23px;
+  padding: 20px;
+}
+#customers ul li {
+  font-size:28px;
+}
+#customers .col-md-6 {
+  align-self: center;
+  padding:30px 0px;
+}
+ 
+#restaurants p {
+  font-size:25px;
+  padding: 30px 30px 0px 30px;
+}
