@@ -40,3 +40,8 @@ section:before {
   font-size:25px;
   padding: 30px 30px 0px 30px;
 }
+
+#about p {
+  font-size:20px;
+  margin:40px 0px;
+}
