@@ -1,4 +1,4 @@
-button.submit {
+/* button.submit {
   float: right;
 }
 
@@ -44,7 +44,7 @@ button.edit {
 
 .top-30 {
   margin-top: 30px;
-}
+} */
 
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -98,27 +98,4 @@ section:before {
 #about p {
   font-size:20px;
   margin:40px 0px;
-}
-
-.video-background {
-  background: #000;
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-  z-index: -99;
-}
-.video-foreground,
-.video-background iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-@media (min-aspect-ratio: 16/9) {
-  .video-foreground { height: 300%; top: -100%; }
-}
-@media (max-aspect-ratio: 16/9) {
-  .video-foreground { width: 300%; left: -100%; }
 }
