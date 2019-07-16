@@ -45,3 +45,80 @@ button.edit {
 .top-30 {
   margin-top: 30px;
 }
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+section:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -56px; 
+  height: 56px; 
+  visibility: hidden; 
+}
+
+.jumbotron h1 {
+    margin-top:30px;
+}
+.jumbotron {
+  padding:150px 0;
+  margin:0;
+  background:#212121;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-size:20px;
+  padding:0px 15px;
+  color:#000;
+}
+
+#customers .col-md-4 img, #restaurants .col-md-4 img {
+  width:40%;
+}
+#customers .col-md-6 img  {
+  width:40%;
+}
+#customers .col-md-4 p {
+  font-size:23px;
+  padding: 20px;
+}
+#customers ul li {
+  font-size:28px;
+}
+#customers .col-md-6 {
+  align-self: center;
+  padding:30px 0px;
+}
+ 
+#restaurants p {
+  font-size:25px;
+  padding: 30px 30px 0px 30px;
+}
+
+#about p {
+  font-size:20px;
+  margin:40px 0px;
+}
+
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
