@@ -5,6 +5,7 @@
     "database": "turntable",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "port": 8889,
     "operatorsAliases": false
   },
   "test": {
@@ -13,6 +14,7 @@
     "database": "turntable_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "port": 8889,
     "operatorsAliases": false
   },
   "production": {
@@ -21,6 +23,7 @@
     "database": "turntable_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "port": 8889,
     "operatorsAliases": false
   }
 }
