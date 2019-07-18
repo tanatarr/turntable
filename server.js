@@ -5,7 +5,7 @@ var exphbs = require("express-handlebars");
 var db = require("./models");
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -25,6 +25,7 @@ app.set("view engine", "handlebars");
 require("./routes/html-routes.js")(app);
 require("./routes/author-api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
+require("./routes/apiRoutes")(app);
 
 var syncOptions = { force: false };
 
