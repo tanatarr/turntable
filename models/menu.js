@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Post = sequelize.define("Post", {
+    var Menu = sequelize.define("Menu", {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -14,15 +14,15 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Post.associate = function (models) {
-        // We're saying that a Post should belong to an Author
-        // A Post can't be created without an Author due to the foreign key constraint
-        Post.belongsTo(models.Author, {
+    Menu.associate = function (models) {
+        // We're saying that a Menu should belong to an Author
+        // A Menu can't be created without an Restaurant due to the foreign key constraint
+        Menu.belongsTo(models.Restaurant, {
             foreignKey: {
                 allowNull: false
             }
         });
     };
 
-    return Post;
+    return Menu;
 };

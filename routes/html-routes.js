@@ -8,18 +8,29 @@ module.exports = function (app) {
 
   // Load index page
   app.get("/", function (req, res) {
-    db.Post.findAll({}).then(function () {
-      res.render("index", {
+    res.render("index");
+  });
 
+  app.get("/menu", function (req, res) {
+    db.Menu.findAll({}).then(function (dbMenu) {
+      res.render("menu", {
+        menu: dbMenu
       });
     });
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
-    db.Post.findOne({ where: { id: req.params.id } }).then(function (dbExample) {
-      res.render("example", {
-        example: dbExample
+  app.get("/menu/:id", function (req, res) {
+    db.Menu.findOne({ where: { id: req.params.id } }).then(function (dbMenu) {
+      res.render("menu", {
+        menu: dbMenu
+      });
+    });
+  });
+
+  app.get("/restaurant", function (req, res) {
+    db.Menu.findAll({}).then(function (dbMenu) {
+      res.render("dashboard", {
+        menu: dbMenu
       });
     });
   });

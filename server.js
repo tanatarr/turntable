@@ -21,11 +21,11 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
+
 // Routes
+require("./routes/restaurant-api-routes.js")(app);
+require("./routes/menu-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
-require("./routes/author-api-routes.js")(app);
-require("./routes/post-api-routes.js")(app);
-require("./routes/apiRoutes")(app);
 
 var syncOptions = { force: false };
 
