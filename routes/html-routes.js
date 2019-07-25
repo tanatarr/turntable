@@ -27,7 +27,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/restaurant", function (req, res) {
+  app.get("/dashboard", function (req, res) {
     db.Menu.findAll({}).then(function (dbMenu) {
       res.render("dashboard", {
         menu: dbMenu

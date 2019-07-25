@@ -131,7 +131,7 @@ $(document).ready(function () {
     menuContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("No menus yet" + partial + ", navigate <a href='/cms" + query +
+    messageH2.html("No menus yet" + partial + ", navigate <a href='/dashboard" + query +
       "'>here</a> in order to get started.");
     menuContainer.append(messageH2);
   }
