@@ -19,7 +19,7 @@ module.exports = function (app) {
     });
   });
 
-  app.get("/api/menu/:id", function (req, res) {
+  app.get("/api/menus/:id", function (req, res) {
 
     db.Menu.findOne({
       where: {

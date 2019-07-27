@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   // menuContainer holds all of our menus
   var menuContainer = $(".menu-container");
-  var menu = $("#category");
+  var menuCategorySelect = $("#category");
   // Click events for the edit and delete buttons
   $(document).on("click", "button.delete", handleMenuDelete);
   $(document).on("click", "button.edit", handleMenuEdit);
@@ -69,37 +69,47 @@ $(document).ready(function () {
     newMenuCard.addClass("card");
     var newMenuCardHeading = $("<div>");
     newMenuCardHeading.addClass("card-header");
-    var deleteBtn = $("<button>");
-    deleteBtn.text("x");
-    deleteBtn.addClass("delete btn btn-danger");
     var editBtn = $("<button>");
     editBtn.text("EDIT");
-    editBtn.addClass("edit btn btn-info");
+    editBtn.addClass("edit btn btn-warning");
+    var deleteBtn = $("<button>");
+    deleteBtn.text("DELETE");
+    deleteBtn.addClass("delete btn btn-danger");
     var newMenuTitle = $("<h2>");
-    var newMenuDate = $("<small>");
-    var newMenurestaurant = $("<h5>");
-    newMenurestaurant.text("Written by: " + menu.restaurant.name);
-    newMenurestaurant.css({
-      float: "right",
-      color: "blue",
-      "margin-top":
-        "-10px"
+    var newMenuRestaurant = $("<h5>");
+    newMenuRestaurant.text("Category: " + menu.Restaurant.name);
+    deleteBtn.css({
+      "margin":
+        "15px"
+    });
+    editBtn.css({
+      "margin":
+        "15px"
+    });
+    newMenuCard.css({
+      "width": "30%",
+      "margin": "15px"
     });
     var newMenuCardBody = $("<div>");
     newMenuCardBody.addClass("card-body");
     var newMenuBody = $("<p>");
+    var newMenuPrice = $("<p>");
     newMenuTitle.text(menu.title + " ");
     newMenuBody.text(menu.body);
-    newMenuDate.text(formattedDate);
-    newMenuTitle.append(newMenuDate);
-    newMenuCardHeading.append(deleteBtn);
-    newMenuCardHeading.append(editBtn);
+    newMenuPrice.text("$ " + menu.price);
     newMenuCardHeading.append(newMenuTitle);
-    newMenuCardHeading.append(newMenurestaurant);
+    newMenuCardHeading.append(newMenuRestaurant);
+    newMenuCardHeading.append(newMenuPrice);
     newMenuCardBody.append(newMenuBody);
     newMenuCard.append(newMenuCardHeading);
     newMenuCard.append(newMenuCardBody);
+    newMenuCardBody.append(editBtn);
+    newMenuCardBody.append(deleteBtn);
     newMenuCard.data("menu", menu);
+    newMenuPrice.css({
+      "font-weight": "bold",
+      "font-size": "15px"
+    });
     return newMenuCard;
   }
 
@@ -118,7 +128,7 @@ $(document).ready(function () {
       .parent()
       .parent()
       .data("menu");
-    window.location.href = "/cms?menu_id=" + currentMenu.id;
+    window.location.href = "/dashboard?menu_id=" + currentMenu.id;
   }
 
   // This function displays a message when there are no menus
@@ -131,8 +141,7 @@ $(document).ready(function () {
     menuContainer.empty();
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
-    messageH2.html("No menus yet" + partial + ", navigate <a href='/dashboard" + query +
-      "'>here</a> in order to get started.");
+    messageH2.html("No menus yet");
     menuContainer.append(messageH2);
   }
 
