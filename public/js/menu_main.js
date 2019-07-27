@@ -76,10 +76,10 @@ $(document).ready(function () {
         newMenuTitle.text(menu.title + " ");
         newMenuBody.text(menu.body);
         newMenuPrice.text("$ " + menu.price);
-        newMenuCardHeading.append(newMenuPrice);
         newMenuCardHeading.append(newMenuTitle);
         newMenuCardHeading.append(newMenuRestaurant);
         newMenuCardHeading.append(newMenuBody);
+        newMenuCardHeading.append(newMenuPrice);
         newMenuCard.append(newMenuCardHeading);
         newMenuCard.append(newImageCardBody);
         newMenuCard.data("menu", menu);
@@ -91,7 +91,7 @@ $(document).ready(function () {
             "font-weight": "bold",
             "font-size": "30px",
             "line-height": "30px",
-            "float": "right",
+            "text-align": "right"
         });
         return newMenuCard;
     }
